@@ -17,3 +17,10 @@
 Immich本体はAGPL v3として提供されています。本体・公式配布物・画像・ロゴ等の権利と、この独自ガイドのライセンスは区別します。非公式であることを明示し、公式の承認・提携を受けたと表示しません。
 
 この公開準備ではモデルやコンテナ、Immich本体を再配布していません。機械学習モデルの配布条件や企業由来についても、ガイド作成だけで確認済みとは扱いません。
+
+## 新規構築で追加した公式資料
+
+- [Ubuntu Server導入](https://ubuntu.com/tutorials/install-ubuntu-server)
+- [Docker Ubuntu導入](https://docs.docker.com/engine/install/ubuntu/)
+- [Immich設定ファイル](https://docs.immich.app/install/config-file/)
+- [Tailscale公式パッケージ](https://pkgs.tailscale.com/stable/)
