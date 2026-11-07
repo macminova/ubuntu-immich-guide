@@ -1,0 +1,35 @@
+# Original new-install example for the pinned v3.3.6 upstream Compose.
+# Requires Compose >= 2.24.4. This is NOT the author's live server configuration.
+services:
+  immich-server:
+    ports: !override
+      - "127.0.0.1:2283:2283"
+    restart: "no"
+    environment:
+      IMMICH_CONFIG_FILE: /config/immich-config.json
+    volumes: !override
+      - type: bind
+        source: ${UPLOAD_LOCATION:?UPLOAD_LOCATION is required}
+        target: /data
+        bind:
+          create_host_path: false
+      - /etc/localtime:/etc/localtime:ro
+      - type: bind
+        source: ./immich-config.json
+        target: /config/immich-config.json
+        read_only: true
+        bind:
+          create_host_path: false
+  immich-machine-learning:
+    profiles: [optional-ml]
+    restart: "no"
+  redis:
+    restart: "no"
+  database:
+    restart: "no"
+    volumes: !override
+      - type: bind
+        source: ${DB_DATA_LOCATION:?DB_DATA_LOCATION is required}
+        target: /var/lib/postgresql/data
+        bind:
+          create_host_path: false
