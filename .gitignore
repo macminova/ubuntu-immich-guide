@@ -37,3 +37,7 @@ logs/
 Thumbs.db
 .vscode/
 .idea/
+
+# Python build artifacts
+__pycache__/
+*.pyc
